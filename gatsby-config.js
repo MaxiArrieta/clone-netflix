@@ -14,6 +14,17 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: "SWAPI",
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: "swapi",
+        // Url to query from
+        url: "https://swapi-graphql.netlify.app/.netlify/functions/index",
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
@@ -24,4 +35,4 @@ module.exports = {
       __key: "images",
     },
   ],
-};
+}
