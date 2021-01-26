@@ -1,6 +1,13 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+    :root{
+        --primary: #00000;
+        --secondary: #D22F26;
+        --light: #FFFFFF;
+        --gray: #686868;
+    }
+
     html {
         font-size: 62.5%;
         font-family: sans-serif;
@@ -19,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
         /* font-size: 18px; */
         font-size: 1.8rem;
         line-height: 1.5;
-        font-family: "Bitter", serif;
+        font-family: "Avenir Next", serif;
         margin: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -36,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     input,
     textarea{
         font-size: 15px;
-        font-family: "Bitter", serif;
+        font-family: "Avenir Next", serif;
     }
     a{
         text-decoration: none;
