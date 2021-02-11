@@ -32,6 +32,7 @@ export default function Header() {
           fluid {
             ...GatsbyImageSharpFluid
           }
+          id
         }
       }
       background: file(relativePath: { eq: "portada-matrix.png" }) {
@@ -39,6 +40,7 @@ export default function Header() {
           fluid {
             ...GatsbyImageSharpFluid
           }
+          id
         }
       }
       matrixLogo: file(relativePath: { eq: "logo-matrix.png" }) {
@@ -46,16 +48,20 @@ export default function Header() {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
           }
+          id
         }
       }
       info: file(relativePath: { eq: "icons/info.svg" }) {
         publicURL
+        id
       }
       play: file(relativePath: { eq: "icons/play.svg" }) {
         publicURL
+        id
       }
       plus: file(relativePath: { eq: "icons/plus.svg" }) {
         publicURL
+        id
       }
     }
   `)
@@ -66,7 +72,11 @@ export default function Header() {
     <Section>
       <Head role="header">
         <DivBack>
-          <ImageBack fluid={background.childImageSharp.fluid} fadeIn="soft" />
+          <ImageBack
+            fluid={background.childImageSharp.fluid}
+            fadeIn="soft"
+            key={background.id}
+          />
           <Div>
             <DivLogo>
               <Img
@@ -75,6 +85,7 @@ export default function Header() {
                   position: "relative",
                   display: "flex",
                 }}
+                key={logo.id}
               />
             </DivLogo>
             <Nav>
@@ -105,22 +116,23 @@ export default function Header() {
             position: "relative",
             display: "flex",
           }}
+          key={matrixLogo.id}
           fadeIn={false}
         />
       </DivLogoMatrix>
       <DivControl>
-        <P imgUrl={plus.publicURL}>
+        <P imgUrl={plus.publicURL} key={plus.id}>
           <span></span>
           <br />
           Mi lista
         </P>
 
-        <BotonPlay imgUrl={play.publicURL}>
+        <BotonPlay imgUrl={play.publicURL} key={play.id}>
           <span></span>
           Reproducir
         </BotonPlay>
 
-        <P imgUrl={info.publicURL}>
+        <P imgUrl={info.publicURL} key={info.id}>
           <span></span> <br />
           Info
         </P>

@@ -8,6 +8,40 @@ export const GlobalStyle = createGlobalStyle`
         --gray: #686868;
     }
 
+    *{
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+
+        ::-webkit-scrollbar-button {
+            width: 0px;
+            height: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3b3c3f;
+            /* border: 1px solid #172449; */
+            border-radius: 5px;
+            transition: .5s;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+            /* border-left: 1px solid #172449; */
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-track:hover {
+            background: #000000;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+    }
+        
+
     html {
         font-size: 62.5%;
         font-family: sans-serif;
@@ -38,14 +72,14 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         line-height: 1.5;
     }
-    /* input,
-    textarea{
-        font-size: 15px;
-        font-family: "Avenir Next", serif;
+    /* ::-webkit-scrollbar:vertical {width:5px;}
+    ::-webkit-scrollbar-thumb {
+        background-color:rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        border-radius: 20px;
+        border: 2px solid #f1f2f3;
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
     } */
-    /* a{
-        text-decoration: none;
-        text-decoration-line: #fff;
-        color: #fff;
-    } */
+    
+
     `

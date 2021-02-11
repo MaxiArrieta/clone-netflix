@@ -1,12 +1,14 @@
 import React from "react"
 import Tarjeta from "../Tarjeta"
 import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
+import { Div, H3 } from "./styles"
 
-export default function Catalogo({ titulo }) {
-  const { allImage } = useStaticQuery(graphql`
-    query {
-      allImage: allFile(filter: { relativeDirectory: { eq: "covers" } }) {
+export default function Catalogo() {
+  const { peliculas, animes } = useStaticQuery(graphql`
+    {
+      peliculas: allFile(
+        filter: { relativeDirectory: { eq: "covers/peliculas" } }
+      ) {
         nodes {
           childImageSharp {
             fluid {
@@ -14,32 +16,39 @@ export default function Catalogo({ titulo }) {
             }
           }
           name
-          relativePath
+        }
+      }
+      animes: allFile(filter: { relativeDirectory: { eq: "covers/anime" } }) {
+        nodes {
+          childImageSharp {
+            fluid {
+              srcSetWebp
+            }
+          }
+          name
         }
       }
     }
   `)
 
-  console.log(allImage.nodes)
-  allImage.nodes.map(image => {
-    console.log("Images: ", image)
-  })
-
-  //   console.log(image)
-
   return (
-    <Div>
-      <h3>{titulo}</h3>
-      <Tarjeta url="url-img" name="name" />
-    </Div>
+    <div>
+      <H3>Populares de Netflix</H3>
+      <Div>
+        {peliculas.nodes.map((pelicula, index) => (
+          <Tarjeta
+            url={pelicula.childImageSharp}
+            name={pelicula.name}
+            key={index}
+          />
+        ))}
+      </Div>
+      <H3>Series Japonesas Anime</H3>
+      <Div>
+        {animes.nodes.map((anime, index) => (
+          <Tarjeta url={anime.childImageSharp} name={anime.name} key={index} />
+        ))}
+      </Div>
+    </div>
   )
 }
-
-const Div = styled.div`
-  margin: 20px;
-  overflow-x: scroll;
-  h3 {
-    font-weight: bold;
-    line-height: 20px;
-  }
-`

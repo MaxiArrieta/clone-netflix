@@ -49,6 +49,9 @@ export const Nav = styled.nav`
   span {
     margin: 10px;
   }
+  @media (min-width: 800px) {
+    font-size: 2rem;
+  }
 `
 export const DivCategorias = styled.div`
   position: absolute;
@@ -57,10 +60,16 @@ export const DivCategorias = styled.div`
     flex-direction: row;
   }
   li {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     display: flex;
-    margin: 8px;
+    margin: 5px;
     /* margin: 5px 10px 5px 8px; */
+    @media (min-width: 450px) {
+      font-size: 1.6rem;
+    }
+    @media (min-width: 800px) {
+      font-size: 1.8rem;
+    }
   }
 `
 export const DivUl = styled.div`
@@ -110,7 +119,7 @@ export const BotonPlay = styled.p`
   color: var(--black);
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 8px 15px;
+  padding: 8px 20px;
   text-align: center;
 
   span {
