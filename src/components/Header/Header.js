@@ -5,16 +5,27 @@ import {
   Section,
   Head,
   Div,
-  DivImage,
+  DivLogo,
   ImageBack,
   DivBack,
   Nav,
   DivCategorias,
+  DivUl,
+  DivLogoMatrix,
+  DivControl,
+  P,
+  BotonPlay,
 } from "./styles"
-import styled from "styled-components"
 
-const Header = () => {
-  const { logo, background } = useStaticQuery(graphql`
+export default function Header() {
+  const {
+    logo,
+    background,
+    matrixLogo,
+    info,
+    play,
+    plus,
+  } = useStaticQuery(graphql`
     {
       logo: file(relativePath: { eq: "logo-netflix.png" }) {
         childImageSharp {
@@ -30,10 +41,26 @@ const Header = () => {
           }
         }
       }
+      matrixLogo: file(relativePath: { eq: "logo-matrix.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      info: file(relativePath: { eq: "icons/info.svg" }) {
+        publicURL
+      }
+      play: file(relativePath: { eq: "icons/play.svg" }) {
+        publicURL
+      }
+      plus: file(relativePath: { eq: "icons/plus.svg" }) {
+        publicURL
+      }
     }
   `)
 
-  console.log("logo", logo.childImageSharp.fluid)
+  console.log("Plus", info.publicURL)
 
   return (
     <Section>
@@ -41,7 +68,7 @@ const Header = () => {
         <DivBack>
           <ImageBack fluid={background.childImageSharp.fluid} fadeIn="soft" />
           <Div>
-            <DivImage>
+            <DivLogo>
               <Img
                 fluid={logo.childImageSharp.fluid}
                 imgStyle={{
@@ -49,7 +76,7 @@ const Header = () => {
                   display: "flex",
                 }}
               />
-            </DivImage>
+            </DivLogo>
             <Nav>
               <span>Series</span>
               <span>Peliculas</span>
@@ -70,22 +97,34 @@ const Header = () => {
           </ul>
         </DivCategorias>
       </DivUl>
+      <DivLogoMatrix>
+        <Img
+          fluid={matrixLogo.childImageSharp.fluid}
+          alt="logo-matrix"
+          imgStyle={{
+            position: "relative",
+            display: "flex",
+          }}
+          fadeIn={false}
+        />
+      </DivLogoMatrix>
+      <DivControl>
+        <P imgUrl={plus.publicURL}>
+          <span></span>
+          <br />
+          Mi lista
+        </P>
+
+        <BotonPlay imgUrl={play.publicURL}>
+          <span></span>
+          Reproducir
+        </BotonPlay>
+
+        <P imgUrl={info.publicURL}>
+          <span></span> <br />
+          Info
+        </P>
+      </DivControl>
     </Section>
   )
 }
-
-export default Header
-const DivUl = styled.div`
-  height: 70px;
-  width: 100%;
-  position: absolute;
-  /* left: calc(50% - 180px); */
-  top: 490px;
-  background: rgb(4, 4, 4);
-  background: linear-gradient(
-    0deg,
-    rgb(3, 3, 3) 0%,
-    rgb(0 0 0 / 78%) 49%,
-    rgb(0 0 0 / 6%) 100%
-  );
-`

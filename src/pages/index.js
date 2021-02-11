@@ -1,15 +1,15 @@
 import * as React from "react"
 import { GlobalStyle } from "../styles"
-import Header from "../components/Header/Header"
+import Header from "../components/Header"
+import Catalogo from "../components/Catalogo/"
 
 // markup
 const IndexPage = () => {
   return (
     <>
       <GlobalStyle />
-      <main>
-        <Header />
-      </main>
+      <Header />
+      <Catalogo titulo="Populares en Netflix" />
     </>
   )
 }

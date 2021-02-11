@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
     :root{
-        --primary: #00000;
+        --black: #000000;
         --secondary: #D22F26;
         --light: #FFFFFF;
         --gray: #686868;
@@ -30,24 +30,22 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: var(--black);
+        color: var(--light);
     }
     h1,
     h2{
         margin: 0;
         line-height: 1.5;
     }
-    h1,
-    h2 {
-        font-family: "Source Sans Pro", sans-serif;
-    }
-    input,
+    /* input,
     textarea{
         font-size: 15px;
         font-family: "Avenir Next", serif;
-    }
-    a{
+    } */
+    /* a{
         text-decoration: none;
         text-decoration-line: #fff;
         color: #fff;
-    }
+    } */
     `
