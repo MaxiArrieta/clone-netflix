@@ -66,15 +66,13 @@ export default function Header() {
     }
   `)
 
-  console.log("Plus", info.publicURL)
-
   return (
     <Section>
       <Head role="header">
         <DivBack>
           <ImageBack
+            fadeIn={true}
             fluid={background.childImageSharp.fluid}
-            fadeIn="soft"
             key={background.id}
           />
           <Div>
@@ -100,7 +98,7 @@ export default function Header() {
       <DivUl>
         <DivCategorias>
           <ul>
-            <li style={{ listStyleType: "none" }}>Surrealista</li>
+            <li>Surrealista</li>
             <li>Distopico</li>
             <li>Habil</li>
             <li>Siniestro</li>

@@ -1,7 +1,7 @@
 import React from "react"
 import Tarjeta from "../Tarjeta"
 import { graphql, useStaticQuery } from "gatsby"
-import { Div, H3 } from "./styles"
+import { Section, Div, H3 } from "./styles"
 
 export default function Catalogo() {
   const { peliculas, animes } = useStaticQuery(graphql`
@@ -12,9 +12,10 @@ export default function Catalogo() {
         nodes {
           childImageSharp {
             fluid {
-              srcSetWebp
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
+          id
           name
         }
       }
@@ -22,9 +23,10 @@ export default function Catalogo() {
         nodes {
           childImageSharp {
             fluid {
-              srcSetWebp
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
+          id
           name
         }
       }
@@ -32,23 +34,27 @@ export default function Catalogo() {
   `)
 
   return (
-    <div>
+    <Section>
       <H3>Populares de Netflix</H3>
       <Div>
-        {peliculas.nodes.map((pelicula, index) => (
+        {peliculas.nodes.map(pelicula => (
           <Tarjeta
             url={pelicula.childImageSharp}
             name={pelicula.name}
-            key={index}
+            key={pelicula.id}
           />
         ))}
       </Div>
       <H3>Series Japonesas Anime</H3>
       <Div>
-        {animes.nodes.map((anime, index) => (
-          <Tarjeta url={anime.childImageSharp} name={anime.name} key={index} />
+        {animes.nodes.map(anime => (
+          <Tarjeta
+            url={anime.childImageSharp}
+            name={anime.name}
+            key={anime.id}
+          />
         ))}
       </Div>
-    </div>
+    </Section>
   )
 }

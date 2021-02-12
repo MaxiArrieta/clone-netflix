@@ -71,15 +71,5 @@ export const GlobalStyle = createGlobalStyle`
     h2{
         margin: 0;
         line-height: 1.5;
-    }
-    /* ::-webkit-scrollbar:vertical {width:5px;}
-    ::-webkit-scrollbar-thumb {
-        background-color:rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
-        border-radius: 20px;
-        border: 2px solid #f1f2f3;
-        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
-        scrollbar-width: thin;
-    } */
-    
-
-    `
+    }  
+`

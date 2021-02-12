@@ -1,21 +1,22 @@
 import React from "react"
-import Img from "gatsby-image"
+import { Image } from "./styles"
 
 export default function Tarjeta({ url, name }) {
   return (
     <div>
-      <Img
-        fluid={url.fluid}
+      <Image
         alt={name}
+        fluid={url.fluid}
         imgStyle={{
           position: "relative",
           display: "flex",
-          height: 144,
-          width: 96,
+          height: 150,
+          width: 100,
           margin: 10,
           padding: 0,
         }}
-        style={{ margin: 0, padding: 0 }}
+        fadeIn={true}
+        durationFadeIn={2500}
       />
     </div>
   )

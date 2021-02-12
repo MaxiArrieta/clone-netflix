@@ -58,17 +58,40 @@ export const DivCategorias = styled.div`
   ul {
     display: flex;
     flex-direction: row;
+    list-style: none;
+    gap: 5px;
   }
   li {
     font-size: 1.4rem;
-    display: flex;
-    margin: 5px;
-    /* margin: 5px 10px 5px 8px; */
+    /* display: flex; */
     @media (min-width: 450px) {
       font-size: 1.6rem;
+      margin-right: 10px;
     }
+
     @media (min-width: 800px) {
       font-size: 1.8rem;
+      margin-right: 20px;
+    }
+
+    &:before {
+      content: "•";
+      margin-left: 5px;
+      margin-right: 2px;
+      top: 2px;
+
+      @media (min-width: 450px) {
+        margin-left: 10px;
+        margin-right: 15px;
+      }
+
+      @media (min-width: 800px) {
+        margin-left: 15px;
+        margin-right: 20px;
+      }
+    }
+    &:first-child:before {
+      display: none;
     }
   }
 `
@@ -78,9 +101,9 @@ export const DivUl = styled.div`
   background: rgb(4, 4, 4);
   background: linear-gradient(
     0deg,
-    rgb(3, 3, 3) 0%,
-    rgb(0 0 0 / 78%) 49%,
-    rgb(0 0 0 / 6%) 100%
+    rgb(3, 3, 3) 15%,
+    rgb(0 0 0 / 70%) 60%,
+    rgb(0 0 0 / 5%) 100%
   );
   height: 70px;
   position: absolute;
