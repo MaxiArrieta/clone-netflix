@@ -30,7 +30,7 @@ export default function Header() {
       logo: file(relativePath: { eq: "logo-netflix.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
           id
         }
@@ -81,7 +81,9 @@ export default function Header() {
                 fluid={logo.childImageSharp.fluid}
                 imgStyle={{
                   position: "relative",
-                  display: "flex",
+                  width: 25,
+                  height: 35,
+                  padding: 10,
                 }}
                 key={logo.id}
               />

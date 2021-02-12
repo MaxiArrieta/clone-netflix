@@ -17,6 +17,7 @@ export const Head = styled.header`
 `
 
 export const Div = styled.div`
+  position: relative;
   background: linear-gradient(180deg, #0e0d0d 0%, rgba(0, 0, 0, 0) 100%),
     linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 101.98%);
   left: 0px;
@@ -27,10 +28,14 @@ export const Div = styled.div`
   width: 100%;
 `
 export const DivLogo = styled.div`
-  align-items: center;
-  display: flex;
   padding-left: 5%;
+  margin-top: 5%;
   width: 20%;
+  position: absolute;
+
+  div {
+    padding-bottom: 0 !important;
+  }
 `
 export const ImageBack = styled(BackgroundImage)`
   height: 513px;
@@ -42,6 +47,10 @@ export const DivBack = styled.div`
   width: 100%;
 `
 export const Nav = styled.nav`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64px;
   align-items: center;
   color: #fff;
   display: flex;
