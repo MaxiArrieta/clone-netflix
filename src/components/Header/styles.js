@@ -57,6 +57,10 @@ export const Nav = styled.nav`
   justify-content: center;
   span {
     margin: 10px;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
   @media (min-width: 800px) {
     font-size: 2rem;
@@ -134,6 +138,8 @@ export const P = styled.p`
   margin-top: 15px;
   padding: 5px;
   text-align: center;
+  cursor: pointer;
+
   span {
     background-image: url(${props => props.imgUrl});
     background-size: cover;
@@ -152,6 +158,7 @@ export const BotonPlay = styled.p`
   margin-bottom: 20px;
   padding: 8px 20px;
   text-align: center;
+  cursor: pointer;
 
   span {
     background-image: url(${props => props.imgUrl});

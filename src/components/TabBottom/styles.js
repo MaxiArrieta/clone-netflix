@@ -27,6 +27,7 @@ export const Footer = styled.footer`
   li {
     text-align: center;
     font-size: 0.9em;
+    cursor: pointer;
   }
 
   svg {

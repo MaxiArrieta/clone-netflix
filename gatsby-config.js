@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://zen-elion-ccbf87.netlify.app/`,
+    siteUrl: `https://the-netflix.netlify.app/`,
   },
   plugins: [
     "gatsby-plugin-styled-components",
