@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Section, Div, H3 } from "./styles"
 
 export default function Catalogo() {
-  const { peliculas, animes } = useStaticQuery(graphql`
+  const { peliculas, animes, series } = useStaticQuery(graphql`
     {
       peliculas: allFile(
         filter: { relativeDirectory: { eq: "covers/peliculas" } }
@@ -20,6 +20,17 @@ export default function Catalogo() {
         }
       }
       animes: allFile(filter: { relativeDirectory: { eq: "covers/anime" } }) {
+        nodes {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+          id
+          name
+        }
+      }
+      series: allFile(filter: { relativeDirectory: { eq: "covers/series" } }) {
         nodes {
           childImageSharp {
             fluid {
@@ -52,6 +63,16 @@ export default function Catalogo() {
             url={anime.childImageSharp}
             name={anime.name}
             key={anime.id}
+          />
+        ))}
+      </Div>
+      <H3>Series Populares</H3>
+      <Div>
+        {series.nodes.map(serie => (
+          <Tarjeta
+            url={serie.childImageSharp}
+            name={serie.name}
+            key={serie.id}
           />
         ))}
       </Div>
