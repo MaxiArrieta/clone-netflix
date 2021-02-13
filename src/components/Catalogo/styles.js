@@ -8,8 +8,10 @@ export const Section = styled.section`
 export const Div = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 20px;
+  /* margin: 70px 0; */
   overflow-x: scroll;
+  /* padding-bottom: 10px;
+  white-space: nowrap; */
 `
 
 export const H3 = styled.h3`

@@ -96,7 +96,6 @@ export default function TabBottom() {
           <span>Descargas</span>
         </li>
       </ul>
-      <p>Disenado por Mansi</p>
     </Footer>
   )
 }

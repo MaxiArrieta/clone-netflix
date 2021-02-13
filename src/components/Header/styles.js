@@ -72,8 +72,7 @@ export const DivCategorias = styled.div`
   }
   li {
     font-size: 1.4rem;
-    /* display: flex; */
-    @media (min-width: 450px) {
+    @media (min-width: 510px) {
       font-size: 1.6rem;
       margin-right: 10px;
     }
@@ -94,7 +93,7 @@ export const DivCategorias = styled.div`
         margin-right: 15px;
       }
 
-      @media (min-width: 800px) {
+      @media (min-width: 760px) {
         margin-left: 15px;
         margin-right: 20px;
       }

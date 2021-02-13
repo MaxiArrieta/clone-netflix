@@ -1,10 +1,9 @@
 import styled from "styled-components"
 
 export const Footer = styled.footer`
-  border: 1px solid red;
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  right: 0l;
+  right: 0;
   left: 0;
   background-color: var(--black);
   min-width: 340px;
@@ -12,40 +11,36 @@ export const Footer = styled.footer`
   padding: 1em 0 0;
 
   ul {
-    border: 1px solid yellow;
     margin: 0;
     padding: 0;
     display: grid;
     grid-auto-flow: column;
     list-style: none;
-    color: #686868;
-  }
-  li {
-    border: 1px solid blue;
-    text-align: center;
-
-    &:hover {
-      fill: white;
-      color: white;
-    }
-  }
-  svg {
-    display: block;
-    margin: auto;
-  }
-  path {
-    fill: #686868;
+    color: var(--gray);
+    padding-bottom: 1em;
   }
 
   p {
     text-align: center;
   }
 
-  li:hover &:is(path, span) {
-    color: white;
-    fill: white;
+  li {
+    text-align: center;
+    font-size: 0.9em;
   }
-  /* li:hover,
+
+  svg {
+    display: block;
+    margin: auto;
+  }
+
   path {
-  } */
+    fill: var(--gray);
+  }
+
+  li:hover path,
+  li:hover span {
+    color: var(--light);
+    fill: var(--light);
+  }
 `

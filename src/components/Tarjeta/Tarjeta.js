@@ -1,10 +1,10 @@
 import React from "react"
 import Img from "gatsby-image"
-import { Div } from "./styles"
+import { DivImg } from "./styles"
 
 export default function Tarjeta({ url, name }) {
   return (
-    <Div>
+    <DivImg>
       <Img
         alt={name}
         fluid={url.fluid}
@@ -19,6 +19,6 @@ export default function Tarjeta({ url, name }) {
         fadeIn={true}
         durationFadeIn={2500}
       />
-    </Div>
+    </DivImg>
   )
 }

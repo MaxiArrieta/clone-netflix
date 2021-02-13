@@ -1,6 +1,25 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: 'Netflix';
+        src: url('../../fonts/AvenirNextLTPro-Regular.otf');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Netflix';
+        src: url('../../fonts/AvenirNextLTPro-Regular.otf');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Netflix';
+        src: url('../../fonts/AvenirNextLTPro-Bold.otf');
+        font-weight: 700;
+        font-style: normal;
+    }
+
     :root{
         --black: #000000;
         --secondary: #D22F26;
@@ -21,14 +40,12 @@ export const GlobalStyle = createGlobalStyle`
 
         ::-webkit-scrollbar-thumb {
             background: #3b3c3f;
-            /* border: 1px solid #172449; */
             border-radius: 5px;
             transition: .5s;
         }
 
         ::-webkit-scrollbar-track {
             background: #000000;
-            /* border-left: 1px solid #172449; */
             border-radius: 0;
         }
 
@@ -47,7 +64,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: sans-serif;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
-        /* box-sizing: border-box; */
     }
     *,
     *:before,
@@ -57,15 +73,14 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
     }
     body {
-        /* font-size: 18px; */
         font-size: 1.8rem;
         line-height: 1.5;
-        font-family: "Avenir Next", serif;
         margin: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: var(--black);
         color: var(--light);
+        /* padding-bottom: 108px; */
     }
     h1,
     h2{
