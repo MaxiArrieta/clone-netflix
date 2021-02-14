@@ -46,7 +46,7 @@ export default function Header() {
       matrixLogo: file(relativePath: { eq: "logo-matrix.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
           id
         }

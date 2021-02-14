@@ -39,6 +39,7 @@ export const DivLogo = styled.div`
 `
 export const ImageBack = styled(BackgroundImage)`
   height: 513px;
+  /* min-width: 375px; */
 `
 export const DivBack = styled.div`
   height: 520px;
@@ -81,9 +82,18 @@ export const DivCategorias = styled.div`
   }
   li {
     font-size: 1.4rem;
+
+    @media (max-width: 375px) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 385px) {
+      font-size: 1.4rem;
+    }
+
     @media (min-width: 510px) {
       font-size: 1.6rem;
-      margin-right: 10px;
+      margin-right: 5px;
     }
 
     @media (min-width: 800px) {
@@ -131,7 +141,11 @@ export const DivUl = styled.div`
 export const DivLogoMatrix = styled.div`
   left: calc(50% - 155px);
   position: absolute;
-  top: 290px;
+  top: 340px;
+  min-width: 340px;
+  @media (max-width: 375px) {
+    left: calc(50% - 170px);
+  }
 `
 export const DivControl = styled.div`
   align-items: center;

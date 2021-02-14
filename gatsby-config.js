@@ -10,11 +10,26 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-offline",
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        precachePages: [`/*`],
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: `Netflix`,
+        short_name: `Netflix`,
+        lang: `es`,
+        display: `standalone`,
         icon: "src/images/icon.png",
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
     {
