@@ -68,7 +68,7 @@ export default function Header() {
 
   return (
     <Section>
-      <Head role="header">
+      <Head>
         <DivBack>
           <ImageBack
             fadeIn={true}
@@ -89,9 +89,11 @@ export default function Header() {
               />
             </DivLogo>
             <Nav>
-              <span>Series</span>
-              <span>Peliculas</span>
-              <span>Mi lista</span>
+              <ul>
+                <li>Series</li>
+                <li>Peliculas</li>
+                <li>Mi Lista</li>
+              </ul>
             </Nav>
           </Div>
         </DivBack>

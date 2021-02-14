@@ -1,5 +1,8 @@
 module.exports = {
   siteMetadata: {
+    title: `Netflix`,
+    description: `Clone de Netflix by Maximiliano Arrieta`,
+    author: `Maximiliano Arrieta <arrieta.maxi18@gmail.com>`,
     siteUrl: `https://the-netflix.netlify.app/`,
   },
   plugins: [

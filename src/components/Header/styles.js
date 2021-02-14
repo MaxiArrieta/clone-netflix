@@ -55,13 +55,18 @@ export const Nav = styled.nav`
   color: #fff;
   display: flex;
   justify-content: center;
-  span {
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  li {
     margin: 10px;
     &:hover {
       cursor: pointer;
       text-decoration: underline;
     }
   }
+
   @media (min-width: 800px) {
     font-size: 2rem;
   }
