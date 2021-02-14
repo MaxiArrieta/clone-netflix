@@ -23,7 +23,7 @@ module.exports = {
         short_name: `Netflix`,
         lang: `es`,
         display: `standalone`,
-        icon: "src/images/icon.png",
+        icon: "src/images/logo-netflix.png",
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#000000`,
