@@ -1,9 +1,9 @@
-import React from "react"
-import Tarjeta from "../Tarjeta"
-import { graphql, useStaticQuery } from "gatsby"
-import { Section, Div, H3 } from "./styles"
+import React from 'react'
+import Tarjeta from '../Tarjeta'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Section, Div, H3 } from './styles'
 
-export default function Catalogo() {
+export default function Catalogo () {
   const { peliculas, animes, series } = useStaticQuery(graphql`
     {
       peliculas: allFile(
@@ -43,12 +43,15 @@ export default function Catalogo() {
       }
     }
   `)
+  // Aca haria la peticion a la api,
+  // api key: f9ca5f2609e5672034726d3fcf210a7b
+  // url: https://api.themoviedb.org/3/...
 
   return (
     <Section>
       <H3>Populares de Netflix</H3>
       <Div>
-        {peliculas.nodes.map(pelicula => (
+        {peliculas.nodes.map((pelicula) => (
           <Tarjeta
             url={pelicula.childImageSharp}
             name={pelicula.name}
@@ -58,7 +61,7 @@ export default function Catalogo() {
       </Div>
       <H3>Series Japonesas Anime</H3>
       <Div>
-        {animes.nodes.map(anime => (
+        {animes.nodes.map((anime) => (
           <Tarjeta
             url={anime.childImageSharp}
             name={anime.name}
@@ -68,7 +71,7 @@ export default function Catalogo() {
       </Div>
       <H3>Series Populares</H3>
       <Div>
-        {series.nodes.map(serie => (
+        {series.nodes.map((serie) => (
           <Tarjeta
             url={serie.childImageSharp}
             name={serie.name}

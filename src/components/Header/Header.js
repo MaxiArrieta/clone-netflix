@@ -1,6 +1,6 @@
-import React from "react"
-import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+import React from 'react'
+import Img from 'gatsby-image'
+import { graphql, useStaticQuery } from 'gatsby'
 import {
   Section,
   Head,
@@ -14,17 +14,17 @@ import {
   DivLogoMatrix,
   DivControl,
   P,
-  BotonPlay,
-} from "./styles"
+  BotonPlay
+} from './styles'
 
-export default function Header() {
+export default function Header () {
   const {
     logo,
     background,
     matrixLogo,
     info,
     play,
-    plus,
+    plus
   } = useStaticQuery(graphql`
     {
       logo: file(relativePath: { eq: "logo-netflix.png" }) {
@@ -71,7 +71,7 @@ export default function Header() {
       <Head>
         <DivBack>
           <ImageBack
-            fadeIn={true}
+            fadeIn
             fluid={background.childImageSharp.fluid}
             key={background.id}
           />
@@ -80,10 +80,10 @@ export default function Header() {
               <Img
                 fluid={logo.childImageSharp.fluid}
                 imgStyle={{
-                  position: "relative",
+                  position: 'relative',
                   width: 25,
                   height: 35,
-                  padding: 10,
+                  padding: 10
                 }}
                 key={logo.id}
               />
@@ -113,10 +113,10 @@ export default function Header() {
       <DivLogoMatrix>
         <Img
           fluid={matrixLogo.childImageSharp.fluid}
-          alt="logo-matrix"
+          alt='logo-matrix'
           imgStyle={{
-            position: "relative",
-            display: "flex",
+            position: 'relative',
+            display: 'flex'
           }}
           key={matrixLogo.id}
           fadeIn={false}
@@ -124,18 +124,18 @@ export default function Header() {
       </DivLogoMatrix>
       <DivControl>
         <P imgUrl={plus.publicURL} key={plus.id}>
-          <span></span>
+          <span />
           <br />
           Mi lista
         </P>
 
         <BotonPlay imgUrl={play.publicURL} key={play.id}>
-          <span></span>
+          <span />
           Reproducir
         </BotonPlay>
 
         <P imgUrl={info.publicURL} key={info.id}>
-          <span></span> <br />
+          <span /> <br />
           Info
         </P>
       </DivControl>

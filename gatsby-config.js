@@ -14,6 +14,9 @@ module.exports = {
       resolve: "gatsby-plugin-offline",
       options: {
         precachePages: [`/*`],
+        workboxConfig: {
+          importWorkboxFrom: `cdn`,
+        },
       },
     },
     {
@@ -23,7 +26,7 @@ module.exports = {
         short_name: `Netflix`,
         lang: `es`,
         display: `standalone`,
-        icon: "src/images/logo-netflix.png",
+        icon: "src/images/netflix-logo.png",
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#000000`,

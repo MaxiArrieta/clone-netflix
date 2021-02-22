@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
+import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
 
 export const Section = styled.section`
   height: 100%;
@@ -102,7 +102,7 @@ export const DivCategorias = styled.div`
     }
 
     &:before {
-      content: "•";
+      content: '•';
       margin-left: 5px;
       margin-right: 2px;
       top: 2px;
@@ -160,7 +160,7 @@ export const P = styled.p`
   cursor: pointer;
 
   span {
-    background-image: url(${props => props.imgUrl});
+    background-image: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -180,7 +180,7 @@ export const BotonPlay = styled.p`
   cursor: pointer;
 
   span {
-    background-image: url(${props => props.imgUrl});
+    background-image: url(${(props) => props.imgUrl});
     display: inline-block;
     height: 20px;
     line-height: 5px;

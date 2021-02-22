@@ -1,6 +1,6 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { graphql, useStaticQuery } from "gatsby"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Seo = () => {
   const { site } = useStaticQuery(graphql`
@@ -15,49 +15,46 @@ const Seo = () => {
     }
   `)
 
-  console.log(site)
-
   return (
-    // <h1>Hola</h1>
     <Helmet
       htmlAttributes={{
-        lang: `es`,
+        lang: 'es'
       }}
       title={site.siteMetadata.title}
       titleTemplate={site.siteMetadata.title}
       meta={[
         {
-          name: `description`,
-          content: site.siteMetadata.description,
+          name: 'description',
+          content: site.siteMetadata.description
         },
         {
-          property: `og:title`,
-          content: site.siteMetadata.title,
+          property: 'og:title',
+          content: site.siteMetadata.title
         },
         {
-          property: `og:description`,
-          content: site.siteMetadata.description,
+          property: 'og:description',
+          content: site.siteMetadata.description
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website'
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          name: 'twitter:card',
+          content: 'summary'
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          name: 'twitter:creator',
+          content: site.siteMetadata.author
         },
         {
-          name: `twitter:title`,
-          content: site.siteMetadata.title,
+          name: 'twitter:title',
+          content: site.siteMetadata.title
         },
         {
-          name: `twitter:description`,
-          content: site.siteMetadata.description,
-        },
+          name: 'twitter:description',
+          content: site.siteMetadata.description
+        }
       ]}
     />
   )
